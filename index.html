@@ -428,7 +428,12 @@
                     <label for="email-footer">Підпишіться на розсилку</label>
                         <div class="form-flex">
                             <input type="email" name="email" id="email-footer" placeholder="Email">
-                            <button type="submit">Підписатися</button>
+                            <button type="submit">Підписатися
+                                <svg width="24" height="24" class="footer-button-icon">
+                                    <use href="./images/icon.svg#icon-send">
+                                    </use>
+                                </svg>
+                            </button>
                         </div>
                 </form>
             </div>
@@ -443,6 +448,19 @@
                     </use>
                 </svg>
             </button>
+            <form class="modal-form">
+                <p>Залиште свої дані, ми вам передзвонимо</p>
+                <label for="name">Ім'я</label>
+                <input type="text" name="name" id="name">
+                <label for="tel">Телефон</label>
+                <input type="tel" name="tel" id="tel">
+                <label for="email-modal">Пошта</label>
+                <input type="email" name="email" id="email-modal">
+                <label for="comment">Коментар</label>
+                <textarea name="" id="comment" cols="30" rows="10"></textarea>
+
+                <button type="submit">Відправити</button>
+            </form>
         </div>
     </div>
 

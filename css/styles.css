@@ -733,7 +733,7 @@ form {
 .footer-form input {
     width: 358px;
     margin-right: 12px;
-    padding: 15px 16px;
+    padding: 13px 15px;
 
     font-weight: 400;
     font-size: 16px;
@@ -747,12 +747,19 @@ form {
     outline: transparent;
 }
 
+.footer-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 /* BUTTON */
 
 button {
+    margin: 0;
+    padding: 0;
     cursor: pointer;
     border-color: transparent;
     border-radius: 4px;
+    border: none;
 }
 
 .main-page-button {
@@ -800,7 +807,8 @@ button {
 }
 
 .footer-form button {
-    
+    display: flex;
+    align-items: center;
     padding: 10px 28px;
 
     font-weight: 700;
@@ -812,7 +820,11 @@ button {
     background-color: var(--accent-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+}
 
+.footer-button-icon {
+    margin-left: 10px;
+    fill: var(--text-white-color);
 }
 
 /* MODAL */
@@ -846,7 +858,6 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 581px;
     width: 528px;
     border-radius: 4px;
     
@@ -869,6 +880,15 @@ button.modal-button-close {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: var(--bgc-page);
 }
+
 .button-icon-close {
     fill:#000000
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px;
+
 }
