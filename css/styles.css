@@ -740,11 +740,15 @@ form {
     line-height: 1.25;
     color: var(--text-white-color);
     
-    background-color: var(--footer-bgc);
+    background: var(--footer-bgc);
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     outline: transparent;
+}
+
+.footer-form input:focus {
+    border-color: var(--accent-text-color);
 }
 
 .footer-form input::placeholder {
@@ -820,6 +824,13 @@ button {
     background-color: var(--accent-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form button:focus,
+.footer-form button:hover {
+    background-color: #188CE8;
+    outline: transparent;
 }
 
 .footer-button-icon {
@@ -841,10 +852,18 @@ button.modal-button-close {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: var(--bgc-page);
+
+    transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button-close:focus .button-icon-close,
+.modal-button-close:hover .button-icon-close {
+    fill: var(--accent-text-color);
 }
 
 .button-icon-close {
-    fill: #000000
+    fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-send {
@@ -862,7 +881,12 @@ button.modal-button-close {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.modal-button-send:focus,
+.modal-button-send:hover {
+    background-color: #188CE8;
 }
 
 /* MODAL */
@@ -938,8 +962,8 @@ button.modal-button-close {
 .modal-form input[name="name"],
 .modal-form input[name="phone-number"],
 .modal-form input[name="email"] {
-    margin-bottom: 10px;
-    padding: 11px 15px;
+    width: 100%;
+    padding: 11px 15px 11px 42px;
 }
 
 .modal-form textarea[name="comment"] {
@@ -947,6 +971,14 @@ button.modal-button-close {
     padding: 12px 15px;
     height: 120px;
     resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form textarea[name="comment"]:focus {
+    border-color: var(--accent-text-color);
 }
 
 .modal-form textarea::placeholder {
@@ -957,7 +989,19 @@ button.modal-button-close {
     color: rgba(117, 117, 117, 0.5);
 }
 
-.check-treaty {
+.modal-form input {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-form input:focus {
+    border-color: var(--accent-text-color);
+}
+
+.check-wrapper {
     display: flex;
     align-items: center;
     margin-left: 12px;
@@ -965,7 +1009,6 @@ button.modal-button-close {
 }
 
 .modal-form label[for="treaty"] {
-    margin-left: 10px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
@@ -976,4 +1019,70 @@ button.modal-button-close {
     font-size: 14px;
     line-height: 1.71;
     color: var(--accent-text-color);
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+
+    fill: var(--title-text-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrapper input:focus + .input-icon {
+    fill: var(--accent-text-color);
+}
+
+.check-wrapper label {
+    display: flex;
+    align-items: center;
+
+}
+
+.icon-wrapper {
+    display: block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 15px;
+    margin-right: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--title-text-color);
+    border-radius: 2px;
+
+    transition: border-width 1ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.check-wrapper input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.check-icon {
+    display: block;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-wrapper input:checked+label .icon-wrapper {
+    border: none;
+}
+
+.check-wrapper input:checked + label .check-icon {
+    opacity: 1;
 }
