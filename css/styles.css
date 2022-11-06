@@ -827,6 +827,44 @@ button {
     fill: var(--text-white-color);
 }
 
+button.modal-button-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--bgc-page);
+}
+
+.button-icon-close {
+    fill: #000000
+}
+
+.modal-button-send {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 52px;
+
+    color: var(--text-white-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    
+    background-color: var(--accent-text-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+
+}
+
 /* MODAL */
 
 .backdrop {
@@ -865,30 +903,77 @@ button {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-button.modal-button-close {
-    position: absolute;
-    right: 8px;
-    top: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: var(--bgc-page);
-}
-
-.button-icon-close {
-    fill:#000000
-}
-
 .modal-form {
     display: flex;
     flex-direction: column;
 
     padding: 50px;
 
+}
+
+.modal-form-title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    color: var(--title-text-color);
+}
+
+.modal-form label[for="name"],
+.modal-form label[for="tel"],
+.modal-form label[for="email-modal"],
+.modal-form label[for="comment"] {
+    margin-bottom: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+}
+
+.modal-form input[name="name"],
+.modal-form input[name="phone-number"],
+.modal-form input[name="email"] {
+    margin-bottom: 10px;
+    padding: 11px 15px;
+}
+
+.modal-form textarea[name="comment"] {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    height: 120px;
+    resize: none;
+}
+
+.modal-form textarea::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.check-treaty {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    margin-bottom: 30px;
+}
+
+.modal-form label[for="treaty"] {
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--primary-text-color);
+}
+.modal-form label[for="treaty"] a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--accent-text-color);
 }

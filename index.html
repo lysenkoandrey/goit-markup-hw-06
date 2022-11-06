@@ -449,17 +449,20 @@
                 </svg>
             </button>
             <form class="modal-form">
-                <p>Залиште свої дані, ми вам передзвонимо</p>
+                <p class="modal-form-title">Залиште свої дані, ми вам передзвонимо</p>
                 <label for="name">Ім'я</label>
                 <input type="text" name="name" id="name">
                 <label for="tel">Телефон</label>
-                <input type="tel" name="tel" id="tel">
+                <input type="tel" name="phone-number" id="tel">
                 <label for="email-modal">Пошта</label>
                 <input type="email" name="email" id="email-modal">
                 <label for="comment">Коментар</label>
-                <textarea name="" id="comment" rows="10"></textarea>
-                <input type="checkbox" name="" id="">
-                <button type="submit">Відправити</button>
+                <textarea name="comment" id="comment" placeholder="Введіть текст"></textarea>
+                <div class="check-treaty">
+                    <input type="checkbox" name="treaty" id="treaty">
+                    <label for="treaty">Погоджуюся з розсилкою та приймаю <a href="#" class="">Умови договору</a></label>
+                </div>
+                <button type="submit" class="modal-button-send">Відправити</button>
             </form>
         </div>
     </div>
